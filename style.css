@@ -15,11 +15,12 @@ body {
 }
 
 .header {
-    background-color: rgb(255,128,0);
+    background-color: rgb(255, 128, 0);
     margin-top: 0;
     display: flex;
     align-items: center;
     padding: 10px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
 }
 
 .mainContent {
@@ -45,17 +46,17 @@ body {
     width: 20px;
 }
 
-  .circle{
-    border:1px solid #000;
-    width:20px;
-    height:20px;
-    border-radius:100%;
-    position:relative;
-    margin:4px;
-    display:inline-block;
-    vertical-align:middle;
+.circle {
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: relative;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: middle;
     cursor: pointer;
-  }
+}
 
 .circle.plus:before,
 .circle.plus:after {
@@ -65,20 +66,22 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background:black;
+    background: black;
 }
-.circle.plus:before{
+
+.circle.plus:before {
     width: 2px;
     margin: 2px auto;
 }
-.circle.plus:after{
+
+.circle.plus:after {
     margin: auto 2px;
     height: 2px;
 }
 
 .plusPosition {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .basket {
