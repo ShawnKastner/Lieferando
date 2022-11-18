@@ -1,5 +1,17 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('fonts/raleway/raleway-v28-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/raleway/raleway-v28-latin-500.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
     margin: 0;
+    font-family: 'raleway';
 }
 
 .header {
@@ -14,10 +26,10 @@ body {
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 40%);
     padding: 8px;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 70%;
     margin-bottom: 16px;
     margin-top: 16px;
-    height: 130px;
+    height: auto;
 }
 
 .mainContent:hover {
@@ -67,8 +79,6 @@ body {
 .plusPosition {
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    bottom: 75px;
 }
 
 .basket {
