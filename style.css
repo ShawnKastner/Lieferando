@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: rgb(255,128,0);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+.mainContent {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 40%);
+    padding: 8px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.container {
+    display: block;
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
