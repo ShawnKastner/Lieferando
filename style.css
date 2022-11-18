@@ -20,6 +20,11 @@ body {
     height: 130px;
 }
 
+.mainContent:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
 .container {
     display: block;
     border: 2px solid white;
