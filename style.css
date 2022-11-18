@@ -17,6 +17,7 @@ body {
     max-width: 800px;
     margin-bottom: 16px;
     margin-top: 16px;
+    height: 130px;
 }
 
 .container {
@@ -27,3 +28,40 @@ body {
     width: 20px;
 }
 
+  .circle{
+    border:1px solid #000;
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    position:relative;
+    margin:4px;
+    display:inline-block;
+    vertical-align:middle;
+    cursor: pointer;
+  }
+
+.circle.plus:before,
+.circle.plus:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:black;
+}
+.circle.plus:before{
+    width: 2px;
+    margin: 2px auto;
+}
+.circle.plus:after{
+    margin: auto 2px;
+    height: 2px;
+}
+
+.plusPosition {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 75px;
+}
