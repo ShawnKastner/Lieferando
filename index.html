@@ -7,107 +7,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script href="script.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <div class="header">
-        <h1>Burgerfriend</h1>
-    </div>
-    <img class="foodImg" src="img/burgers.jpg">
-    <div class="foodDescription">
-        <h2>Burger</h2>
-        <span>Unser Burgerfleisch besteht aus 100% deutschem Beef. Du kannst zwischen vier Brötchen Sorten wählen:
-            Brioche,
-            Sesam, Lauge oder Vollkorn
-            Natürlich bekommst du jeden Burger bei uns auch Brotlos, sprich mit Salat anstelle des Buns!</span>
-    </div>
-    <div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Hamburger</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce und Burgersauce</span><br><br>
-            <span>10,40€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>The Churck Norris</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Bacon, Tomate, Gurke, Salat, karamellisierten Zwiebeln, BBQ-Sauce und Burgersauce</span><br><br>
-            <span>11,90€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Triple Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Chester-Käse, Mozzarella, Edamer, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce und
-                Burgersauce</span><br><br>
-            <span>11,90€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>New York Chili Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Chester-Käse, Jalapenos, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Chilli-Cheese-Sauce und
-                Burgersauce</span><br><br>
-            <span>11,40€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Matterhorn</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Kartoffelrösti, Edamer, Tomate, Gurke, Salat, Röstzwiebeln, Ranchsauce und
-                Burgersauce</span><br><br>
-            <span>11,40€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Oh my Goat</h3><span onclick="addToBasket()" class="circle plus"></span>
-            </div>
-            <span>mit Ziegenkäse, Gurke, Salat, Feigen-Senf-Sauce und Burgersauce</span><br><br>
-            <span>11,90€</span>
-        </div>
+    <header>
+        <h1>Burgeria</h1>
+    </header>
+
+    <div class="content">
         <div>
-            <img class="foodImg" src="img/salad.jpg">
+            <img class="foodImg" src="img/burgers.jpg">
             <div class="foodDescription">
-                <h2>Salad Bowls</h2>
-                <span>Zu allen großen Salaten gibt es leckeres Hausbrot.</span>
+                <h2>Burger</h2>
+                <span>Unser Burgerfleisch besteht aus 100% deutschem Beef. Du kannst zwischen vier Brötchen Sorten
+                    wählen:
+                    Brioche,
+                    Sesam, Lauge oder Vollkorn
+                    Natürlich bekommst du jeden Burger bei uns auch Brotlos, sprich mit Salat anstelle des Buns!</span>
             </div>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Zieggy Stardust (vegetarisch)</h3><span onclick="addToBasket()" class="circle plus"></span>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Hamburger</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce und Burgersauce</span><br><br>
+                <span>10,40€</span>
             </div>
-            <span>mit karamellisiertem Ziegenkäse, knackigen Blattsalaten, Tomaten, Gurken, rote Bete, Cranberries,
-                gerösteten Walnüssen, Kresse und Honig, dazu getoastetes Körnerbrot</span><br><br>
-            <span>13,40€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Las Vegas</h3><span onclick="addToBasket()" class="circle plus"></span>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>The Churck Norris</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Bacon, Tomate, Gurke, Salat, karamellisierten Zwiebeln, BBQ-Sauce und
+                    Burgersauce</span><br><br>
+                <span>11,90€</span>
             </div>
-            <span>mit Buttermilk Fried Chicken Fingers, knackigen Blattsalaten, Tomaten, Gurken, Grana Padano, Croutons
-                und
-                Kresse, dazu getoastetes Körnerbrot</span><br><br>
-            <span>13,90€</span>
-        </div>
-        <div class="mainContent">
-            <div class="plusPosition">
-                <h3>Simsaladim (vegan)</h3><span onclick="addToBasket()" class="circle plus"></span>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Triple Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Chester-Käse, Mozzarella, Edamer, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce
+                    und
+                    Burgersauce</span><br><br>
+                <span>11,90€</span>
             </div>
-            <span>mit würzigen Falafelbällchen, veganer Granatapfel-Minz-Mayonnaise, knackigen Blattsalaten, Tomaten,
-                Gurken, Couscous,
-                Karottensalat mit Sesam-Dressing, rote Bete und Kresse, dazu getoastetes Körnerbrot</span><br><br>
-            <span>14,40€</span>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>New York Chili Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Chester-Käse, Jalapenos, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Chilli-Cheese-Sauce
+                    und
+                    Burgersauce</span><br><br>
+                <span>11,40€</span>
+            </div>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Matterhorn</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Kartoffelrösti, Edamer, Tomate, Gurke, Salat, Röstzwiebeln, Ranchsauce und
+                    Burgersauce</span><br><br>
+                <span>11,40€</span>
+            </div>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Oh my Goat</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Ziegenkäse, Gurke, Salat, Feigen-Senf-Sauce und Burgersauce</span><br><br>
+                <span>11,90€</span>
+            </div>
+            <div>
+                <img class="foodImg" src="img/salad.jpg">
+                <div class="foodDescription">
+                    <h2>Salad Bowls</h2>
+                    <span>Zu allen großen Salaten gibt es leckeres Hausbrot.</span>
+                </div>
+            </div>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Zieggy Stardust (vegetarisch)</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit karamellisiertem Ziegenkäse, knackigen Blattsalaten, Tomaten, Gurken, rote Bete, Cranberries,
+                    gerösteten Walnüssen, Kresse und Honig, dazu getoastetes Körnerbrot</span><br><br>
+                <span>13,40€</span>
+            </div>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Las Vegas</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit Buttermilk Fried Chicken Fingers, knackigen Blattsalaten, Tomaten, Gurken, Grana Padano,
+                    Croutons
+                    und
+                    Kresse, dazu getoastetes Körnerbrot</span><br><br>
+                <span>13,90€</span>
+            </div>
+            <div class="mainContent">
+                <div class="plusPosition">
+                    <h3>Simsaladim (vegan)</h3><span onclick="addToBasket()" class="circle plus"></span>
+                </div>
+                <span>mit würzigen Falafelbällchen, veganer Granatapfel-Minz-Mayonnaise, knackigen Blattsalaten,
+                    Tomaten,
+                    Gurken, Couscous,
+                    Karottensalat mit Sesam-Dressing, rote Bete und Kresse, dazu getoastetes Körnerbrot</span><br><br>
+                <span>14,40€</span>
+            </div>
         </div>
 
-        <div class="basket">
+        <div id="shoppingCart" class="shoppingCart">
             <h2>Warenkorb</h2>
         </div>
+    </div>
+
+    <footer>
+
+    </footer>
 
 
 </body>

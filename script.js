@@ -1,11 +1,9 @@
 let foods = []
-let prices = [];
-let shoppingBasket = [];
+let prices = []; let shoppingBasket = [];
 
 
 function addToBasket(name, price) {
-    shoppingBasket.push(name);
-    prices.push(price);
+    shoppingBasket.push(name); prices.push(price);
 }
 
 function updateShoppingBasket() {
@@ -14,7 +12,7 @@ function updateShoppingBasket() {
 
     for (let i = 0; i < prices.length; i++) {
         sum += prices[i]
-        
+
         document.getElementById().innerHTML = sum;
     }
 }
