@@ -12,10 +12,10 @@
 
 </head>
 
-<body>
+<body onload="renderBasket()">
 
     <header>
-        <h1>Burgeria</h1>
+        <h1>Los Burger</h1>
     </header>
 
     <div class="content">
@@ -31,14 +31,14 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Hamburger</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Hamburger</h3><span onclick="addToBasket('Hamburger', 10.40)" class="circle plus"></span>
                 </div>
                 <span>mit Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce und Burgersauce</span><br><br>
                 <span>10,40€</span>
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>The Churck Norris</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>The Churck Norris</h3><span onclick="addToBasket('The Chuck Norris', 11.90)" class="circle plus"></span>
                 </div>
                 <span>mit Bacon, Tomate, Gurke, Salat, karamellisierten Zwiebeln, BBQ-Sauce und
                     Burgersauce</span><br><br>
@@ -46,7 +46,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Triple Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Triple Cheese</h3><span onclick="addToBasket('Triple Cheese', 11.90)" class="circle plus"></span>
                 </div>
                 <span>mit Chester-Käse, Mozzarella, Edamer, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Ranchsauce
                     und
@@ -55,7 +55,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>New York Chili Cheese</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>New York Chili Cheese</h3><span onclick="addToBasket('New York Chili Cheese', 11.40)" class="circle plus"></span>
                 </div>
                 <span>mit Chester-Käse, Jalapenos, Tomate, Gurke, Salat, karamellisierten Zwiebeln, Chilli-Cheese-Sauce
                     und
@@ -64,7 +64,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Matterhorn</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Matterhorn</h3><span onclick="addToBasket('Matterhorn', 11.40)" class="circle plus"></span>
                 </div>
                 <span>mit Kartoffelrösti, Edamer, Tomate, Gurke, Salat, Röstzwiebeln, Ranchsauce und
                     Burgersauce</span><br><br>
@@ -72,7 +72,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Oh my Goat</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Oh my Goat</h3><span onclick="addToBasket('Oh my Goat', 11.90)" class="circle plus"></span>
                 </div>
                 <span>mit Ziegenkäse, Gurke, Salat, Feigen-Senf-Sauce und Burgersauce</span><br><br>
                 <span>11,90€</span>
@@ -86,7 +86,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Zieggy Stardust (vegetarisch)</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Zieggy Stardust (vegetarisch)</h3><span onclick="addToBasket('Zieggy Stardust (vegetarisch)', 13.40)" class="circle plus"></span>
                 </div>
                 <span>mit karamellisiertem Ziegenkäse, knackigen Blattsalaten, Tomaten, Gurken, rote Bete, Cranberries,
                     gerösteten Walnüssen, Kresse und Honig, dazu getoastetes Körnerbrot</span><br><br>
@@ -94,7 +94,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Las Vegas</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Las Vegas</h3><span onclick="addToBasket('Las Vegas', 13.90)" class="circle plus"></span>
                 </div>
                 <span>mit Buttermilk Fried Chicken Fingers, knackigen Blattsalaten, Tomaten, Gurken, Grana Padano,
                     Croutons
@@ -104,7 +104,7 @@
             </div>
             <div class="mainContent">
                 <div class="plusPosition">
-                    <h3>Simsaladim (vegan)</h3><span onclick="addToBasket()" class="circle plus"></span>
+                    <h3>Simsaladim (vegan)</h3><span onclick="addToBasket('Simsaladim (vegan)', 14.40)" class="circle plus"></span>
                 </div>
                 <span>mit würzigen Falafelbällchen, veganer Granatapfel-Minz-Mayonnaise, knackigen Blattsalaten,
                     Tomaten,
@@ -114,8 +114,11 @@
             </div>
         </div>
 
-        <div id="shoppingCart" class="shoppingCart">
+        <div class="shoppingCart">
             <h2>Warenkorb</h2>
+            <div id="shoppingCart">
+
+            </div>
         </div>
     </div>
 
