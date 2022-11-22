@@ -3,21 +3,30 @@ let basketPrice = [];
 let basketAmount = [];
 let shoppingBasket = [];
 
+function renderEmptyBasket () {
+    let basket = document.getElementById('shoppingCart');
+    
+    basket.innerHTML = `
+    <div>
+    <h3>Fülle deinen Warenkorb</h3>
+    </div>`;
+}
+
 function renderBasket() {
     let basket = document.getElementById('shoppingCart');
     basket.innerHTML = '';
 
     for (let i = 0; i < basketFood.length; i++) {
         
-        basket.innerHTML += basketTemplate(basketFood, basketPrice, basketAmount);
+        basket.innerHTML += basketTemplate(i);
     }
-    updateShoppingBasket()
+    updateShoppingBasket();
 }
 
-function basketTemplate(basketFood, basketPrice, basketAmount) {
+function basketTemplate(i) {
     return `<div class="listItem">
-           <b>${basketAmount}x ${basketFood}:</b> 
-           <div id="newPrice">${basketPrice}€</div>
+           ${basketAmount[i]}x ${basketFood[i]}: 
+           <div id="newPrice${i}">${basketPrice[i]}€</div>
         </div>`;
 }
 
@@ -28,18 +37,16 @@ function addToBasket(food, price) {
         basketPrice.push(price);
         basketAmount.push(1)
     } else {
-        ;
         basketAmount[index]++;
     }
     renderBasket();
 }
 
 function updateShoppingBasket() {
-    let sum = 0;
-
+   
     for (let i = 0; i < basketPrice.length; i++) {
-        sum += basketPrice[i] * basketAmount[i];
+        let totalPrice = basketPrice[i] * basketAmount[i];
 
-        document.getElementById('newPrice').innerHTML = `${sum.toFixed(2)}€;`
+        document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2)}€`;
     }
 }
