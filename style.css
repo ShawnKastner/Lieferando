@@ -120,3 +120,11 @@ footer {
     justify-content: space-around;
     font-size: 20px;
 }
+
+.emptyBasket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}

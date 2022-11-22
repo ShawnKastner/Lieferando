@@ -3,13 +3,20 @@ let basketPrice = [];
 let basketAmount = [];
 let shoppingBasket = [];
 
-function renderEmptyBasket () {
+function renderEmptyBasket() {
     let basket = document.getElementById('shoppingCart');
-    
-    basket.innerHTML = `
-    <div>
-    <h3>Fülle deinen Warenkorb</h3>
-    </div>`;
+
+    basket.innerHTML = emptyTemplate();
+}
+
+function emptyTemplate() {
+    return `
+    <div class="emptyBasket">
+        <img src="img/shopping-basket-64.ico">
+        <h3>Fülle deinen Warenkorb</h3>
+        <span>Füge einige leckeren Speisen hinzu <br> 
+        und Bestelle dein Essen</span>
+    </div>`
 }
 
 function renderBasket() {
@@ -17,7 +24,7 @@ function renderBasket() {
     basket.innerHTML = '';
 
     for (let i = 0; i < basketFood.length; i++) {
-        
+
         basket.innerHTML += basketTemplate(i);
     }
     updateShoppingBasket();
@@ -25,9 +32,11 @@ function renderBasket() {
 
 function basketTemplate(i) {
     return `<div class="listItem">
-           ${basketAmount[i]}x ${basketFood[i]}: 
-           <div id="newPrice${i}">${basketPrice[i]}€</div>
-        </div>`;
+                ${basketAmount[i]}x ${basketFood[i]}: 
+            <div id="newPrice${i}">
+                ${basketPrice[i]}€
+            </div>
+            </div>`;
 }
 
 function addToBasket(food, price) {
@@ -43,7 +52,7 @@ function addToBasket(food, price) {
 }
 
 function updateShoppingBasket() {
-   
+
     for (let i = 0; i < basketPrice.length; i++) {
         let totalPrice = basketPrice[i] * basketAmount[i];
 
