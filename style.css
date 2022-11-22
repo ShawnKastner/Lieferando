@@ -83,6 +83,18 @@ header {
     height: 2px;
 }
 
+.circle.minus:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:black;
+    margin: auto 2px;
+    height: 2px;
+}
+
 .plusPosition {
     display: flex;
     justify-content: space-between;
@@ -127,4 +139,22 @@ footer {
     align-items: center;
     flex-direction: column;
     height: 50vh;
+}
+
+.addRemove {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.addRemove span {
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.addRemove span:hover {
+    text-decoration: none;
 }

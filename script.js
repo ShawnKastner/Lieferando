@@ -28,15 +28,31 @@ function renderBasket() {
         basket.innerHTML += basketTemplate(i);
     }
     updateShoppingBasket();
+    
 }
 
 function basketTemplate(i) {
-    return `<div class="listItem">
-                ${basketAmount[i]}x ${basketFood[i]}: 
-            <div id="newPrice${i}">
-                ${basketPrice[i]}€
-            </div>
-            </div>`;
+    return `
+    <div class="listItem">
+        ${basketAmount[i]}x ${basketFood[i]}: 
+        <div id="newPrice${i}">
+            ${basketPrice[i]}€
+        </div>
+    </div>
+    <div class="addRemove">
+        <span>Anmerkung hinzufügen</span>
+            <span onclick="addToBasket()" class="circle minus"></span>
+            <span onclick="addToBasket()" class="circle plus"></span>
+    </div>`;
+}
+
+function priceTotal() {
+    return `
+    <div>
+        <span>Zwischensumme</span><br>
+        <span>Lieferkosten</span><br>
+        <span><b>Gesamt</b></span>
+    </div>`
 }
 
 function addToBasket(food, price) {
