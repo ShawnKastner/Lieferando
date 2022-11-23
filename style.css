@@ -158,3 +158,25 @@ footer {
 .addRemove span:hover {
     text-decoration: none;
 }
+
+.listItemShadow {
+    box-shadow: 0 2px 0px 0 rgb(0 0 0 / 5%);
+}
+
+.sumTotalBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalSumLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8px;
+}
+
+.subTotalRight {
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px;
+}
