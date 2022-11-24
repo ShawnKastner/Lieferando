@@ -3,11 +3,14 @@ let basketPrice = [];
 let basketAmount = [];
 let shoppingBasket = [];
 let deliveryCosts = 1.50;
+loadBasket();
 
 function renderEmptyBasket() {
     let basket = document.getElementById('shoppingCart');
 
     basket.innerHTML = emptyTemplate();
+    renderBasket();
+    saveBasket();
 }
 
 function emptyTemplate() {
@@ -75,6 +78,7 @@ function addToBasket(food, price) {
         basketAmount[index]++;
     }
     renderBasket();
+    saveBasket();
 }
 
 function updateShoppingBasket() {
@@ -101,4 +105,28 @@ function subTotal() {
 
 function endSum() {
     return totalSum;
+}
+
+function saveBasket() {
+    let basketFoodAsText = JSON.stringify(basketFood);
+    localStorage.setItem('basketFood', basketFoodAsText);
+    let basketAmountAsText = JSON.stringify(basketAmount);
+    localStorage.setItem('basketAmount', basketAmountAsText);
+    let basketPriceAsText = JSON.stringify(basketPrice);
+    localStorage.setItem('basketPrice', basketPriceAsText);
+}
+
+function loadBasket() {
+    let basketFoodAsText = localStorage.getItem('basketFood');
+    let basketAmountAsText = localStorage.getItem('basketAmount');
+    let basketPriceAsText = localStorage.getItem('basketPrice');
+
+    if(basketFoodAsText && basketPriceAsText) {
+        basketFood = JSON.parse(basketFoodAsText);
+        basketPrice = JSON.parse(basketPriceAsText);
+    }
+    if(basketAmountAsText && basketPriceAsText) {
+        basketAmount = JSON.parse(basketAmountAsText);
+        basketPrice = JSON.parse(basketPriceAsText)
+    }
 }
