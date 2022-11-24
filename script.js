@@ -90,20 +90,15 @@ function subTotal() {
     for (let i = 0; i < basketPrice.length; i++) {
         sum += basketAmount[i] * basketPrice[i];
     }
+    if (sum <= 10) {
+        extraCost = 1.50;
+        } else {
+        totalSum = sum + 1.50;
+        }
 
     return sum.toFixed(2);
 }
 
 function endSum() {
-    let sum = 0;
-    for (let i = 0; i < basketPrice.length; i++) {
-        sum += basketAmount[i] * basketPrice[i];
-    }
-    if (sum <= 10) {
-    extraCost = 1.50;
-    } else {
-    totalSum = sum + 1.50;
-    }
-
     return totalSum;
 }
