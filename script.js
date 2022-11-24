@@ -44,12 +44,31 @@ function basketTemplate(i) {
             ${basketPrice[i]}€
             </div>
         </div>
-        <div class="addRemove">
+        <div class="addRemoveButton">
             <span>Anmerkung hinzufügen</span>
-            <span onclick="remove()" class="circle minus"></span>
+            <span onclick="removeFood()" class="circle minus"></span>
             <span onclick="addOneMore()" class="circle plus"></span>
         </div>
     </div>`;
+}
+function addToBasket(food, price) {
+    let index = basketFood.indexOf(food);
+    if (index == -1) {
+        basketFood.push(food);
+        basketPrice.push(price);
+        basketAmount.push(1)
+    } else {
+        basketAmount[index]++;
+    }
+    renderBasket();
+    saveBasket();
+}
+function updateShoppingBasket() {
+    for (let i = 0; i < basketPrice.length; i++) {
+        let totalPrice = basketPrice[i] * basketAmount[i];
+
+        document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2)}€`;
+    }
 }
 
 function priceTotal() {
@@ -65,28 +84,8 @@ function priceTotal() {
             <span>${deliveryCosts.toFixed(2)}€<span><br><br>
             <span>${endSum().toFixed(2)}€</span>
         </div>
-    </div>`;
-}
-
-function addToBasket(food, price) {
-    let index = basketFood.indexOf(food);
-    if (index == -1) {
-        basketFood.push(food);
-        basketPrice.push(price);
-        basketAmount.push(1)
-    } else {
-        basketAmount[index]++;
-    }
-    renderBasket();
-    saveBasket();
-}
-
-function updateShoppingBasket() {
-    for (let i = 0; i < basketPrice.length; i++) {
-        let totalPrice = basketPrice[i] * basketAmount[i];
-
-        document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2)}€`;
-    }
+    </div>
+    <button class="orderButton"><b>Bezahlen (${endSum().toFixed(2)}€)</b></button>`;
 }
 
 function subTotal() {
@@ -121,12 +120,17 @@ function loadBasket() {
     let basketAmountAsText = localStorage.getItem('basketAmount');
     let basketPriceAsText = localStorage.getItem('basketPrice');
 
-    if(basketFoodAsText && basketPriceAsText) {
+    if(basketFoodAsText && basketPriceAsText && basketAmountAsText) {
         basketFood = JSON.parse(basketFoodAsText);
         basketPrice = JSON.parse(basketPriceAsText);
-    }
-    if(basketAmountAsText && basketPriceAsText) {
         basketAmount = JSON.parse(basketAmountAsText);
-        basketPrice = JSON.parse(basketPriceAsText)
     }
+}
+
+function addOneMore() {
+
+}
+
+function addOneMore() {
+
 }

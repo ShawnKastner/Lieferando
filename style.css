@@ -142,7 +142,7 @@ footer {
     height: 50vh;
 }
 
-.addRemove {
+.addRemoveButton {
     display: flex;
     justify-content: space-evenly;
     margin-top: 16px;
@@ -181,3 +181,17 @@ footer {
     justify-content: flex-end;
     margin: 8px;
 }
+
+.orderButton {
+    border-radius: 50px;
+    width: 70%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: unset;
+    color: white;
+    background-color: rgb(255, 128, 0);
+    cursor: pointer;
+}
+ 
