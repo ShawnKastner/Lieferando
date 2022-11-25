@@ -133,7 +133,7 @@ function addOneMore() {
 }
 
 function removeFood(i) {
-    if (basketAmount[i] > 1) {
+    if(basketAmount[i] > 1) {
         basketAmount[i]--;
         renderBasket();
     }else {
