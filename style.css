@@ -142,11 +142,12 @@ footer {
     height: 50vh;
 }
 
-.addRemoveButton {
+.addRemove {
     display: flex;
     justify-content: space-evenly;
     margin-top: 16px;
     margin-bottom: 16px;
+    align-items: center;
 }
 
 .addRemove span {
@@ -193,5 +194,9 @@ footer {
     color: white;
     background-color: rgb(255, 128, 0);
     cursor: pointer;
+}
+
+.orderButton:hover {
+    background-color: rgb(241, 93, 0);
 }
  

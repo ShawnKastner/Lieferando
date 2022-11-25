@@ -1,7 +1,6 @@
 let basketFood = [];
 let basketPrice = [];
 let basketAmount = [];
-let shoppingBasket = [];
 let deliveryCosts = 1.50;
 loadBasket();
 
@@ -39,18 +38,19 @@ function basketTemplate(i) {
     return /*html*/`
     <div class="listItemShadow">
         <div class="listItem">
-        ${basketAmount[i]}x ${basketFood[i]}: 
+        <span>${basketAmount[i]}x</span> <span>${basketFood[i]}: </span>
             <div id="newPrice${i}">
-            ${basketPrice[i]}€
+            <span>${basketPrice[i]}€</span>
             </div>
         </div>
-        <div class="addRemoveButton">
+        <div class="addRemove">
             <span>Anmerkung hinzufügen</span>
-            <span onclick="removeFood()" class="circle minus"></span>
+            <span onclick="removeFood(${i})" class="circle minus"></span>
             <span onclick="addOneMore()" class="circle plus"></span>
         </div>
     </div>`;
 }
+
 function addToBasket(food, price) {
     let index = basketFood.indexOf(food);
     if (index == -1) {
@@ -63,6 +63,7 @@ function addToBasket(food, price) {
     renderBasket();
     saveBasket();
 }
+
 function updateShoppingBasket() {
     for (let i = 0; i < basketPrice.length; i++) {
         let totalPrice = basketPrice[i] * basketAmount[i];
@@ -131,6 +132,15 @@ function addOneMore() {
 
 }
 
-function addOneMore() {
-
+function removeFood(i) {
+    if (basketAmount[i] > 1) {
+        basketAmount[i]--;
+        renderBasket();
+    }else {
+        basketAmount.splice(i, 1);
+        basketPrice.splice(i, 1);
+        basketFood.splice(i, 1);
+    }
+    renderBasket();
+    saveBasket();
 }
