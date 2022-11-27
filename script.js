@@ -27,7 +27,6 @@ function renderBasket() {
     basket.innerHTML = '';
 
     for (let i = 0; i < basketFood.length; i++) {
-
         basket.innerHTML += basketTemplate(i);
     }
     updateShoppingBasket();
@@ -46,7 +45,7 @@ function basketTemplate(i) {
         <div class="addRemove">
             <span>Anmerkung hinzufügen</span>
             <span onclick="removeFood(${i})" class="circle minus"></span>
-            <span onclick="addOneMore()" class="circle plus"></span>
+            <span onclick="addOneMore(${i})" class="circle plus"></span>
         </div>
     </div>`;
 }
@@ -68,7 +67,7 @@ function updateShoppingBasket() {
     for (let i = 0; i < basketPrice.length; i++) {
         let totalPrice = basketPrice[i] * basketAmount[i];
 
-        document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2)}€`;
+        document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2).replace('.', ',')}€`;
     }
 }
 
@@ -81,12 +80,12 @@ function priceTotal() {
             <span><b>Gesamt:</b></span>
         </div>
         <div class="subTotalRight">
-            <span>${subTotal()}€<span><br><br>
-            <span>${deliveryCosts.toFixed(2)}€<span><br><br>
-            <span>${endSum().toFixed(2)}€</span>
+            <span>${subTotal().replace('.', ',')}€<span><br><br>
+            <span>${deliveryCosts.toFixed(2).replace('.', ',')}€<span><br><br>
+            <span>${endSum().toFixed(2).replace('.', ',')}€</span>
         </div>
     </div>
-    <button class="orderButton"><b>Bezahlen (${endSum().toFixed(2)}€)</b></button>`;
+    <button class="orderButton"><b>Bezahlen (${endSum().toFixed(2).replace('.', ',')}€)</b></button>`;
 }
 
 function subTotal() {
@@ -96,9 +95,9 @@ function subTotal() {
     }
     if (sum <= 10) {
         extraCost = 1.50;
-        } else {
+    } else {
         totalSum = sum + 1.50;
-        }
+    }
 
     return sum.toFixed(2);
 }
@@ -121,7 +120,7 @@ function loadBasket() {
     let basketAmountAsText = localStorage.getItem('basketAmount');
     let basketPriceAsText = localStorage.getItem('basketPrice');
 
-    if(basketFoodAsText && basketPriceAsText && basketAmountAsText) {
+    if (basketFoodAsText && basketPriceAsText && basketAmountAsText) {
         basketFood = JSON.parse(basketFoodAsText);
         basketPrice = JSON.parse(basketPriceAsText);
         basketAmount = JSON.parse(basketAmountAsText);
@@ -133,14 +132,23 @@ function addOneMore() {
 }
 
 function removeFood(i) {
-    if(basketAmount[i] > 1) {
+    if (basketAmount[i] > 1) {
         basketAmount[i]--;
         renderBasket();
-    }else {
+    } else {
         basketAmount.splice(i, 1);
         basketPrice.splice(i, 1);
         basketFood.splice(i, 1);
     }
+    if(basketAmount[i] == 0) {
+        renderEmptyBasket();
+    }
+    renderBasket();
+    saveBasket();
+}
+
+function addOneMore(i) {
+    basketAmount[i]++;
     renderBasket();
     saveBasket();
 }
