@@ -208,6 +208,7 @@ function payTemplate() {
     return /*html*/`
     <div class="succes">
         <span>Sie haben erfolgreich bestellt.<br>
-        Die Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.
+        Die Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.</span>
+        <img src="img/delivery-food-64.ico">
     </div>`
 }
