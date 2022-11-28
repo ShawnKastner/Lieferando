@@ -153,11 +153,7 @@ function added(i) {
 
 function pay() {
     let cart = document.getElementById('shoppingCart');
-    cart.innerHTML = /*html*/`
-    <div class="succes">
-        <span>Sie haben erfolgreich bestellt.<br>
-        Die Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.
-    </div>`
+    cart.innerHTML = payTemplate();
 }
 
 function emptyTemplate() {
@@ -206,4 +202,12 @@ function priceTotal() {
         </div>
     </div>
     <button class="orderButton" onclick="pay()"><b>Bezahlen (${endSum().toFixed(2).replace('.', ',')}€)</b></button>`;
+}
+
+function payTemplate() {
+    return /*html*/`
+    <div class="succes">
+        <span>Sie haben erfolgreich bestellt.<br>
+        Die Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.
+    </div>`
 }
