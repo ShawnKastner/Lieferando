@@ -84,14 +84,14 @@ header {
     height: 2px;
 }
 
-.circle.minus:before{
+.circle.minus:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background:black;
+    background: black;
     margin: auto 2px;
     height: 2px;
 }
@@ -125,7 +125,7 @@ header {
 
 footer {
     height: 200px;
-    background-color: rgb(38,38,38);
+    background-color: rgb(38, 38, 38);
 }
 
 .listItem {
@@ -210,10 +210,6 @@ textarea {
     color: #125fca;
 }
 
-.d.none {
-    display: none;
-}
-
 .notice {
     display: flex;
     justify-content: flex-start;
@@ -231,7 +227,7 @@ textarea {
 
 footer {
     height: 100px;
-    background-color: rgb(38,38,38);
+    background-color: rgb(38, 38, 38);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -245,4 +241,75 @@ footer a {
 
 footer a:hover {
     cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+
+.stickyButton {
+    position: sticky;
+    bottom: 10px;
+    width: 90%;
+    left: 35px;
+    border-radius: 50px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: unset;
+    color: white;
+    background-color: rgb(255, 128, 0);
+    cursor: pointer;
+}
+
+.closeBasket {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 30px;
+}
+
+@media screen {
+    @media(max-width:900px) {
+        .shoppingCart {
+            display: none;
+        }
+
+        .mainContent {
+            max-width: 100%;
+        }
+
+        header {
+            justify-content: space-between;
+        }
+
+        .basketIcon {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .d-none {
+            display: unset;
+        }
+
+        .orderButton {
+            width: 100%;
+        }
+
+        .basketMobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-top: 10%;
+            background-color: white;
+        }
+    }
+
 }

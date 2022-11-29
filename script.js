@@ -8,8 +8,8 @@ loadBasket();
 function renderEmptyBasket() {
     let basket = document.getElementById('shoppingCart');
     if (basketAmount <= 0) {
-    basket.innerHTML = emptyTemplate();
-    }else {
+        basket.innerHTML = emptyTemplate();
+    } else {
         renderBasket();
     }
     saveBasket();
@@ -24,6 +24,7 @@ function renderBasket() {
     }
     updateShoppingBasket();
     basket.innerHTML += priceTotal();
+    document.getElementById('mobileBasket').innerHTML = `<b>Bezahlen (${endSum().toFixed(2).replace('.', ',')}€)</b>`
 }
 
 function addToBasket(food, price) {
@@ -136,7 +137,7 @@ function demolition(i) {
 function added(i) {
     let notes = document.getElementById(`text${i}`).value;
     noteAdd.push(notes);
-    
+
     let myNote = document.getElementById(`notice${i}`);
     myNote.innerHTML = '';
     for (let i = 0; i < noteAdd.length; i++) {
@@ -156,6 +157,20 @@ function pay() {
     cart.innerHTML = payTemplate();
 }
 
+function responsiveBasket() {
+    const responsiveBasket = document.getElementById('responsiveBasket');
+    responsiveBasket.classList.replace('shoppingCart', 'basketMobile');
+    const mobileButton = document.getElementById('mobileButton');
+    mobileButton.classList.remove('stickyButton');
+}
+
+function closeBasket() {
+    const close = document.getElementById('responsiveBasket');
+    close.classList.replace('basketMobile', 'shoppingCart');
+    const addButton = document.getElementById('mobileButton');
+    addButton.classList.add('stickyButton')
+}
+
 function emptyTemplate() {
     return /*html*/`
     <div class="emptyBasket">
@@ -168,14 +183,14 @@ function emptyTemplate() {
 
 function basketTemplate(i) {
     return /*html*/`
-    <div class="listItemShadow">
+    <div id="basket" class="listItemShadow">
         <div class="listItem">
-        <span>${basketAmount[i]}x</span> <span>${basketFood[i]}: </span>
+        <span>${basketAmount[i]}x</span><span>${basketFood[i]}: </span>
             <div id="newPrice${i}">
             <span>${basketPrice[i]}€</span>
             </div>
         </div>
-        <div id="none" class="addRemove">
+        <div class="addRemove">
             <div>
                 <span onclick="addNote(${i})">Anmerkung hinzufügen</span>
                 <div class="note" id="note${i}"></div>
@@ -208,7 +223,7 @@ function payTemplate() {
     return /*html*/`
     <div class="succes">
         <span>Sie haben erfolgreich bestellt.<br>
-        Die Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.</span>
+        Ihre Bestellung wird ca. in 50 Minuten bei ihnen eintreffen.</span>
         <img src="img/delivery-food-64.ico">
     </div>`
 }

@@ -16,7 +16,7 @@
 <body onload="renderEmptyBasket()">
 
     <header>
-        <h1><img src="img/logo.png"></h1>
+        <img src="img/logo.png">
     </header>
 
     <div class="content">
@@ -115,13 +115,15 @@
             </div>
         </div>
 
-        <div class="shoppingCart">
+        <div id="responsiveBasket" class="shoppingCart">
+            <img onclick="closeBasket()" class="d-none closeBasket" src="img/close-window-64.ico">
             <h2>Warenkorb</h2>
             <div id="shoppingCart">
 
             </div>
         </div>
     </div>
+        <button onclick="responsiveBasket()" id="mobileButton" class="stickyButton d-none"><b>Warenkorb öffnen</b></button>;
 
     <footer>
         <span>©2022 Los Burger</span>
