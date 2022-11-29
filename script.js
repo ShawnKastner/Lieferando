@@ -24,7 +24,6 @@ function renderBasket() {
     }
     updateShoppingBasket();
     basket.innerHTML += priceTotal();
-    document.getElementById('mobileBasket').innerHTML = `<b>Bezahlen (${endSum().toFixed(2).replace('.', ',')}€)</b>`
 }
 
 function addToBasket(food, price) {
@@ -68,6 +67,11 @@ function endSum() {
         sum += basketAmount[i] * basketPrice[i];
     }
     totalSum = sum + 1.50;
+
+    if(basketAmount == 0) {
+        totalSum = 0;
+    }
+
     return totalSum;
 }
 
