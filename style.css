@@ -310,6 +310,14 @@ footer a:hover {
             padding-top: 10%;
             background-color: white;
         }
+
+        .emptyBasket {
+            text-align: center;
+        }
+
+        .succes {
+            text-align: center;
+        }
     }
 
 }

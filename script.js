@@ -45,6 +45,10 @@ function updateShoppingBasket() {
 
         document.getElementById(`newPrice${i}`).innerHTML = `${totalPrice.toFixed(2).replace('.', ',')}€`;
     }
+    if(basketAmount == 0) {
+        renderEmptyBasket();
+        document.getElementById('removeSum').classList.add('d-none');
+    }
 }
 
 function subTotal() {
@@ -67,10 +71,6 @@ function endSum() {
         sum += basketAmount[i] * basketPrice[i];
     }
     totalSum = sum + 1.50;
-
-    if(basketAmount == 0) {
-        totalSum = 0;
-    }
 
     return totalSum;
 }
@@ -113,9 +113,6 @@ function removeFood(i) {
         basketAmount.splice(i, 1);
         basketPrice.splice(i, 1);
         basketFood.splice(i, 1);
-    }
-    if (basketAmount == 0) {
-        renderEmptyBasket();
     }
     renderBasket();
     saveBasket();
@@ -208,7 +205,7 @@ function basketTemplate(i) {
 
 function priceTotal() {
     return /*html*/`
-    <div class="sumTotalBox">
+    <div id="removeSum" class="sumTotalBox">
         <div class="totalSumLeft">
             <span>Zwischensumme:</span><br>
             <span>Lieferkosten:</span><br>
